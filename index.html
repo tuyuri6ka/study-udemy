@@ -6,11 +6,18 @@
     <link rel="stylesheet" href="css/sanitize.css">
     <link rel="stylesheet" href="css/style.css">
     <body>
-        
+        <div class="content">
         <h1>入会申し込み</h1>
         <p>入会するには、次のドームに必要事項をご記入ください</p>
-        <p>メールアドレス：<input type="email" name="mymail"></p>
-        <p>パスワード：<input type="password" name="password"></p>
-        <p><button type="submit">登録する</button></p>
+        <div class="control">
+            <label for="mymail">メールアドレス<span class="required">必須</span></label>
+            <input id="mymail" type="email" name="mymail">
+        </div>
+        <div class="control">
+            <label for="passcode">パスワード<span class="required">必須</span></label>
+            <input id="passcode" type="password" name="password">
+        </div>
+        <div><button type="submit">登録する</button></div>
+        </div>
     </body>
 </html>
