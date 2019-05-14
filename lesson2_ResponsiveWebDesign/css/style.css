@@ -48,3 +48,7 @@ header h1{
 .description{
     clear:left;
 }
+
+ol{
+    list-style:decimal;
+}
