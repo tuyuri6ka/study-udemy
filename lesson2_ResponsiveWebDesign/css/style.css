@@ -1,14 +1,15 @@
 @import url(sanitize.css);
+@import url('https://fonts.googleapis.com/css?family=Sriracha');
 
 body{
-    background-color: #fefefe;
+    background-color: #f0f0f0;
     padding: 10px;
     font-size:14px;
     color: #666;
 }
 
 .container{
-    width: 800px;
+    max-width: 800px;
     margin: 0 auto;
     box-shadow: 0 0 10px rgba(0,0,0,0.3);
 }
@@ -24,7 +25,7 @@ header h1{
     font-size: 24px;
     font-weight: normal;
     text-align: center;
-
+    font-family: 'Sriracha', cursive;
 }
 
 .description img{
@@ -87,4 +88,38 @@ ol{
     content:" ";
     display: table;
     clear: both;
+}
+.a{
+    color: #666;
+}
+
+footer{
+    text-align: center;
+    font-size: 80%;
+}
+
+/* 印刷する際に指定 */
+@media print{
+
+}
+
+/* メディアクエリ：画面が表示されている場合のみ */
+@media only screen and (max-width: 600px){
+    .description img{
+        float: none;
+        display: block;
+        margin: 0 auto;
+    }
+
+    header{
+        padding: 5px;
+    }
+    header h1{
+        font-size: 12px;
+    }
+
+    .songs li{
+        float: none;
+        width: inherit;
+    }
 }
