@@ -24,10 +24,27 @@ header h1{
     font-size: 24px;
     font-weight: normal;
     text-align: center;
-    
+
 }
 
 .description img{
     float:left;
     margin: 0 10px 10px 0;
+}
+
+.information h1{
+    font-size:18px;
+    margin:0 10px 10px 0;
+    float:left;
+}
+.information .type{
+    display: inline;
+    background-color:#e35a4d;
+    padding: 3px 5x;
+    font-size: 0.8em;
+    color:#fff;
+}
+
+.description{
+    clear:left;
 }
