@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ご利用アンケート</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="./css/style.css">
+
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="row">
+                <div class="col-sm-6">
+                    <h1>ご利用アンケート</h1>
+                </div>
+                <div class="col-sm-6 align-right">
+                    <a href="#"> HOMEへ戻る</a>
+                </div>
+            </div>
+        </header>
+    </div>
+    
+    <hr>
+
+        <div class="container">
+            <form action="https://book.h2o-space.com/html/form.php" method="post" class="row">
+                <div class="col-sm-8 col-sm-offset-2">
+                    <p>この度は、本書をご利用いただきありがとうございます。恐れ入りますが、以下のフォームにご記入いただき、送信していただけると幸いです。</p>
+
+                    <div clas="form-group">
+                        <label for="name">お名前</label>
+                        <input type="text" id="name" name="name" 
+                        class="form-control" placeholder="例）山田 太郎">
+                    </div>
+                    <div class="form-group">
+                        <label for="job">ご職業</label>
+                        <select id="job" name="job" class="form-control">
+                            <option value="">選択してください</option>
+                            <option value="会社員">会社員</option>
+                            <option value="学生">学生</option>
+                            <option value="その他">その他</option>
+                        </select>
+                    </div>
+                    <div class="from-group">
+                        <label>知りたい内容（複数回答可）</label>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" name="q1" value="html">
+                                HTML
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" name="q1" value="css">
+                                CSS
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" name="q1" value="javascript">
+                                JavaScript
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>理解度はいかがですか？</label>
+                        <div>
+                            <label class="radio-inline">
+                                <input type="radio" name="q2" value="1">理解できなかった
+                            </label>
+                            <label class="radio-inline"">
+                                <input type="radio" name="q2" value="2">だいたい理解できた
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="q2" value="3">理解できた
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="q2" value="4" checked>回答しない
+                            </label>
+                        </div>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+
+    <hr>
+
+    <div class= "container">
+    <footer>
+        <p>&copy; H2O space</p>
+    </footer>  
+
+    </div>
+</body>
+</html>

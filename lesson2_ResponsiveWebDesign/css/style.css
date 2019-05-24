@@ -28,15 +28,6 @@ header h1{
     font-family: 'Sriracha', cursive;
 }
 
-.description img{
-    float:left;
-    margin: 0 10px 10px 0;
-    transition-property: opacity;
-    transition-duration: 1s;
-    transition-timing-function: ease;
-    transition-delay: 0s;
-}
-
 .information h1{
     font-size:18px;
     margin:0 10px 10px 0;
@@ -52,6 +43,19 @@ header h1{
 
 .description{
     clear:left;
+}
+
+.description img{
+    float:left;
+    margin: 0 10px 10px 0;
+    transition-property: opacity;
+    transition-duration: 1s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+}
+
+.description img:hover{
+    opacity: 0.5;
 }
 
 ol{
@@ -102,6 +106,8 @@ footer{
     font-size: 80%;
 }
 
+
+
 /* 印刷する際に指定 */
 @media print{
 
@@ -126,8 +132,4 @@ footer{
         float: none;
         width: inherit;
     }
-}
-
-.description img:hover{
-    opacity: 0.5;
 }
