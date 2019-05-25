@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&display=swap" rel="stylesheet">
+        <link href="./css/style.css" rel="stylesheet">
+
+        <title>My Photos</title>
+    </head>
+    <body>
+        <header>
+            <h1>My Photos</h1>
+        </header>
+
+        <div class="container">
+            <div id="img_unit">
+            </div>
+        </div>
+        
+        <script src="js/jquery.min.js"></script>
+        <script>
+            $.getJSON('https://h2o-space.com/htmlbook/images.php',function(data){
+                //function(data)は無名関数。第1引数の通信が完了したら、コールバックとして機能する。
+                //第1引数で受け取ったデータは第2引数のfunction()の中のdataに格納されている。
+
+                for(var i = 0; i<data.length; i++){
+                    //document,createElementのようなもの
+                    $('<div class="photo"></div>')
+                        //append()は括弧内を子にする。jsのappendChildに同じ。
+                        .append('<img src="' + data[i].path + '">')
+                        .append('<div class="inner"><p>' + data[i].caption + '<span>' + data[i].name + '</span></p></div>')
+                        //#img_unitを親とする（aooendとは主従が逆）
+                        .appendTo('#img_unit');
+                }
+                alert('データを受信しました');
+            });
+        </script>
+    </body>
+</html>
