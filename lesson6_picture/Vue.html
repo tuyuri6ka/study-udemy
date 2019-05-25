@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&display=swap" rel="stylesheet">
+        <link href="./css/style.css" rel="stylesheet">
+
+        <title>My Photos</title>
+    </head>
+    <body>
+        <header>
+            <h1>My Photos</h1>
+        </header>
+
+        <div class="container">
+            <div id="img_unit">
+                <div class="photo" v-for="Photo in Photos">
+                    <img :src="Photo.path">
+                    <div class="inner"><p>{{Photo.caption}}<span>{{ Photo.name }}</span></p></div>
+                </div>
+            </div>
+        </div>
+        
+        <script src="js/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script>
+
+            var app = new Vue({
+                el: '#img_unit',
+                data: {
+                    Photos: []
+                },
+                created: function(){
+                    //getJSON内ではthisはjQueryを指すため、ここでselfでthisを取り、getJSON内でdataを格納している。
+                    var self = this;
+                    $.getJSON('https://h2o-space.com/htmlbook/images.php',function(data){
+                        self.Photos = data;
+                    });
+                }
+            })
+
+            //$.getJSON('https://h2o-space.com/htmlbook/images.php',function(data){
+                //function(data)は無名関数。第1引数の通信が完了したら、コールバックとして機能する。
+                //第1引数で受け取ったデータは第2引数のfunction()の中のdataに格納されている。
+
+                /*for(var i = 0; i<data.length; i++){
+                    //document,createElementのようなもの
+                    $('<div class="photo"></div>')
+                        //append()は括弧内を子にする。jsのappendChildに同じ。
+                        .append('<img src="' + data[i].path + '">')
+                        .append('<div class="inner"><p>' + data[i].caption + '<span>' + data[i].name + '</span></p></div>')
+                        //#img_unitを親とする（aooendとは主従が逆）
+                        .appendTo('#img_unit');
+                }
+            });*/
+
+        </script>
+    </body>
+</html>
