@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TIMER</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div class="container">
+        <p id="timer">00:00:00</p>
+
+        <div>
+            <button id="start_stop" class="btn btn-lg btn-primary">
+                START
+            </button>
+        </div>
+    </div>
+
+    <script>
+
+        var addZero = function(value){
+            if(value < 10){
+                value = '0' + value;
+            }
+            return value;
+        }
+        
+        document.getElementById('start_stop').addEventListener('click',
+        function(){
+            var now = new Date();
+            var seconds = now.getSeconds();
+            seconds = addZero(seconds);
+
+            var minutes = now.getMinutes();
+            minutes = addZero(minutes);
+
+            var hours = now.getHours();
+            hours = addZero(hours);
+
+            //HTML内のid要素を取得して、innerHTMLで書き換える。
+            document.getElementById('timer').innerHTML = hours + ':' + minutes + ':' + seconds;
+        })
+        
+    </script>
+</body>
+</html>
